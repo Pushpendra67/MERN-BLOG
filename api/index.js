@@ -3,6 +3,10 @@ const app=express();
 import mongoose from "mongoose";
 import dotenv from "dotenv"
 dotenv.config();
+import router from "./routes/user.route.js";
+
+app.use("/api",router);
+
 
 mongoose.connect(process.env.MONGO).then((result) => {
     console.log("database connected")
